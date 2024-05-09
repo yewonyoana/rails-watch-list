@@ -1,0 +1,12 @@
+<div class="container mt-5">
+  <h2 class="fw-bold">Lists</h2>
+   <ul>
+      <% @lists.each do |list| %>
+        <li class="mb-3"><%= link_to list.name, list_path(list), class: 'text-decoration-none fw-lighter text-black' %></li>
+      <% end %>
+   </ul>
+  <div class="mt-5">
+    <h5 class="fw-bold">Add a List?</h5>
+    <%= render 'lists/form' %>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <%= link_to '< Lists', lists_path, class: 'btn-light opacity-25 text-decoration-none' %>
+  <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
+    <h2><%= @list.name %></h2>
+    <div><%= link_to '+ Movie', new_list_bookmark_path(@list), class: 'btn-light text-decoration-none' %></div>
+  </div>
+  <div class="d-flex flex-column justify-content-between border-bottom border-info border-3">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="fst-italic mb-2"><i class="fa-solid fa-quote-left"></i> <%= bookmark.comment %> <i class="fa-solid fa-quote-right"></i></div>
+      <div class="card-category mb-2" style="background-image: url(<%= bookmark.movie.poster_url %>)"></div>
+      <div class="mb-2"><i class="fa-solid fa-film"></i> <%= bookmark.movie.title %></div>
+      <div class="mb-2"><i class="fa-solid fa-star"></i> <%= bookmark.movie.rating %></div>
+      <div class="mb-2"><i class="fa-solid fa-paragraph"></i> <%= bookmark.movie.overview %></div>
+      <div class="align-self-end mb-2"><%= link_to bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: 'Delete?' } do %>
+        <i class="fa-solid fa-trash-can"></i>
+      <% end %></div>
+    <% end %>
+  </div>
+</div>
