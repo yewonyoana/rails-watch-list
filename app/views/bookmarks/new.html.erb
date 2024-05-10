@@ -1,8 +1,11 @@
-<div class="container">
-  <h5>Add a Bookmark?</h5>
-  <%= simple_form_for [@list, @bookmark] do |f| %>
-    <%= f.input :comment %>
-    <%= f.association :movie, prompt: "Select a Movie" %>
-    <%= f.submit 'Submit', class: 'btn' %>
-  <% end %>
+<div class="container mt-5">
+  <%= link_to '< Return', list_path(@list), class: 'btn-light text-decoration-none return-btn' %>
+  <h5 class="header question-header mt-3 mb-3">Add a Movie?</h5>
+  <div class="d-flex flex-column justify-content-between>
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.input :comment %>
+      <%= f.association :movie, prompt: "Select a Movie" %>
+      <%= f.submit 'Submit', class: 'btn align-self-end submit-btn' %>
+    <% end %>
+  </div>
 </div>

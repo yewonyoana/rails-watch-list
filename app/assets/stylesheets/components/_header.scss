@@ -1,0 +1,20 @@
+.header {
+  color: $yellow;
+  font-size: 54px;
+  text-transform: uppercase;
+}
+
+.list {
+  font-weight: 100;
+  background-color: black;
+  padding: 5px;
+}
+
+.question-header,
+.movie-title {
+  font-size: 32px;
+}
+
+.movie-title {
+  font-weight: 700;
+}

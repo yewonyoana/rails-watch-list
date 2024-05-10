@@ -1,0 +1,31 @@
+.btn {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 20px;
+  color: white;
+  &:hover {
+    border-color: $yellow;
+    color: $yellow;
+  }
+}
+
+.submit-btn {
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.i {
+  color: $yellow;
+}
+
+.fa-trash-can,
+.return-btn {
+  color: white;
+  opacity: 0.6;
+  &:hover {
+    color: $yellow;
+    opacity: 1;
+  }
+}
