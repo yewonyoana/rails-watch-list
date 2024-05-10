@@ -1,12 +1,12 @@
 <div class="container mt-5">
-  <h2 class="fw-bold">Lists</h2>
-   <ul>
+  <h1 class="header fw-bolder text-uppercase">Lists</h1>
+    <div class="d-flex flex-wrap justify-content-between align-items center">
       <% @lists.each do |list| %>
-        <li class="mb-3"><%= link_to list.name, list_path(list), class: 'text-decoration-none fw-lighter text-black' %></li>
+        <div class="card-category m-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_path('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU') %>)">
+          <%= link_to list.name, list_path(list), class: 'text-decoration-none fw-bold text-white' %>
+        </div>
       <% end %>
-   </ul>
-  <div class="mt-5">
-    <h5 class="fw-bold">Add a List?</h5>
-    <%= render 'lists/form' %>
-  </div>
+    </div>
+  <h5 class="fw-bold">Add a List?</h5>
+  <div><%= render 'lists/form' %></div>
 </div>
