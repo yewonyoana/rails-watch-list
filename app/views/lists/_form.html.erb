@@ -1,7 +1,7 @@
-<div class="list-form">
+<div class="list-form d-flex flex-column justify-content-between">
   <%= simple_form_for @list_new do |f| %>
     <%= f.input :name %>
     <%= f.input :photo, as: :file %>
-    <%= f.submit 'Submit', class: 'btn submit-btn' %>
+    <%= f.submit 'Submit', class: 'btn submit-btn align-self-end' %>
   <% end %>
 </div>
